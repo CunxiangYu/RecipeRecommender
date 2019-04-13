@@ -30,7 +30,7 @@ class App extends React.Component<AppProps> {
         <Button variant='outline-primary'>
           What's For Lunch?
         </Button>
-        <RecipeList />
+        <RecipeList recipes={this.props.recipe.recipes} />
       </Container>
     );
   }

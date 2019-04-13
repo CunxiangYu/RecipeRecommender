@@ -8,7 +8,7 @@ export interface IngredientState {
   ingredients: Ingredient[];
 }
 
-export const UPDATE_INGREDIENTS = 'FETCH_INGREDIENTS';
+export const UPDATE_INGREDIENTS = 'UPDATE_INGREDIENTS';
 
 export interface UpdateIngredientAction {
   type: typeof UPDATE_INGREDIENTS;
