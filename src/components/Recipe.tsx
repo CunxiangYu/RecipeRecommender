@@ -7,8 +7,8 @@ class Recipe extends Component {
     return (
       <div>
         <Card style={{ width: '18rem' }}>
-          <Card.Header as="h5">Ham and Cheese Toastie</Card.Header>
-          <ListGroup variant="flush">
+          <Card.Header as='h5'>Ham and Cheese Toastie</Card.Header>
+          <ListGroup variant='flush'>
             <ListGroup.Item>Ham</ListGroup.Item>
             <ListGroup.Item>Cheese</ListGroup.Item>
             <ListGroup.Item>Bread</ListGroup.Item>

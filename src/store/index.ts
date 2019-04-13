@@ -1,0 +1,25 @@
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunkMiddleware from 'redux-thunk';
+
+import { ingredientReducer } from './ingredient/reducers';
+import { recipeReducer } from './recipe/reducers';
+
+const rootReducer = combineReducers({
+  ingredient: ingredientReducer,
+  recipe: recipeReducer
+});
+
+export type AppState = ReturnType<typeof rootReducer>;
+
+export default function configureStore() {
+  const middlewares = [thunkMiddleware];
+  const middleWareEnhancer = applyMiddleware(...middlewares);
+
+  const store = createStore(
+    rootReducer,
+    composeWithDevTools(middleWareEnhancer)
+  );
+
+  return store;
+}

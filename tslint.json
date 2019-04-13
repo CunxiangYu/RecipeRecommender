@@ -8,7 +8,10 @@
     "tslint-plugin-prettier"
   ],
   "rules": {
-    "prettier": true,
-    "interface-name": false
+    "indent": [true, "spaces", 2],
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "quotemark": [true, "single"],
+    "trailing-comma": [false, "always"]
   }
 }
