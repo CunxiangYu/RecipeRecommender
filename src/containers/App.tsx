@@ -29,7 +29,7 @@ class App extends React.Component<AppProps> {
 
   public handleClick = () => {
     this.setState({ showRecommendedRecipes: true, showButton: false });
-  }
+  };
 
   public componentDidMount() {
     this.props.thunkFetchIngredients();
@@ -54,8 +54,7 @@ class App extends React.Component<AppProps> {
             show &&
             (props => (
               <animated.div style={props}>
-                <Button
-                  variant='outline-primary' onClick={this.handleClick}>
+                <Button variant='outline-primary' onClick={this.handleClick}>
                   What's For Lunch?
                 </Button>
               </animated.div>

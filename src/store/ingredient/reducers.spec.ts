@@ -12,7 +12,7 @@ const mockPayload: Ingredient[] = [
     bestBefore: '24/04/2019',
     useBy: '01/05/2019'
   }
-]
+];
 
 describe('ingredient reducer', () => {
   it('should handle UPDATE_INGREDIENTS', () => {
@@ -21,5 +21,5 @@ describe('ingredient reducer', () => {
       payload: mockPayload
     };
     expect(ingredientReducer(undefined, updateAction)).toEqual({ ingredients: mockPayload });
-  })
+  });
 });

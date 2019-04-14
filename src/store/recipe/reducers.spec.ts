@@ -17,7 +17,7 @@ const mockPayload: Recipe[] = [
       'Mock ingredient 5'
     ]
   }
-]
+];
 
 describe('recipe reducer', () => {
   it('should handle UPDATE_RECIPES', () => {
@@ -26,5 +26,5 @@ describe('recipe reducer', () => {
       payload: mockPayload
     };
     expect(recipeReducer(undefined, updateAction)).toEqual({ recipes: mockPayload });
-  })
+  });
 });
