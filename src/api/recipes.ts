@@ -3,8 +3,7 @@ import configurations from '../config';
 
 const RECIPES_API = configurations.api.recipes;
 
-export const fetchRecipes = () => {
-  return axios.get(RECIPES_API).then(res => {
-    return res.data.recipes;
-  });
+export const fetchRecipes = async () => {
+  const response = await axios.get(RECIPES_API);
+  return response.data.recipes;
 };

@@ -1,3 +1,11 @@
+/**
+ * 
+ * These are middilewares for making asynchronous api requests to
+ * fetch available recipes and ingredients of the day. And dispatch
+ * actions to save data in global store upon receiving response
+ * 
+ */
+
 import { Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { AppState } from './store';

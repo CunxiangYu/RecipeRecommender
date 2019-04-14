@@ -36,11 +36,13 @@ class App extends React.Component<AppProps> {
   }
 }
 
+// Map global state to props of App component
 const mapStateToProps = (state: AppState) => ({
   ingredient: state.ingredient,
   recipe: state.recipe
 });
 
+// Connect App component to Redux store
 export default connect(
   mapStateToProps,
   { thunkFetchIngredients, thunkFetchRecipes }

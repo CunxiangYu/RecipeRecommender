@@ -1,10 +1,11 @@
 import * as React from 'react';
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import { Recipe } from '../store/recipe/types';
 
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 interface RecipeItemProps {
-  recipe: Recipe
+  recipe: Recipe;
 }
 
 const RecipeItem: React.SFC<RecipeItemProps> = ({ recipe }) => {

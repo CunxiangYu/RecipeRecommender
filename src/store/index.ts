@@ -10,8 +10,10 @@ const rootReducer = combineReducers({
   recipe: recipeReducer
 });
 
+// Global app state
 export type AppState = ReturnType<typeof rootReducer>;
 
+// Function to create and configure store objectswith reducers, thunk middileware and redux devtools 
 export default function configureStore() {
   const middlewares = [thunkMiddleware];
   const middleWareEnhancer = applyMiddleware(...middlewares);
