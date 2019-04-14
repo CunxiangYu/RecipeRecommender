@@ -22,6 +22,7 @@ interface AppProps {
 }
 
 class App extends React.Component<AppProps> {
+  // Local state for controlling the visibility of button and recipe list
   public state = {
     showRecommendedRecipes: false,
     showButton: true
