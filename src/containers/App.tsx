@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { animated, Transition } from 'react-spring';
 import { AppState } from '../store';
 
 import Button from 'react-bootstrap/Button';
@@ -21,6 +22,15 @@ interface AppProps {
 }
 
 class App extends React.Component<AppProps> {
+  public state = {
+    showRecommendedRecipes: false,
+    showButton: true
+  };
+
+  public handleClick = () => {
+    this.setState({ showRecommendedRecipes: true, showButton: false });
+  }
+
   public componentDidMount() {
     this.props.thunkFetchIngredients();
     this.props.thunkFetchRecipes();
@@ -33,11 +43,39 @@ class App extends React.Component<AppProps> {
     );
 
     return (
-      <Container>
-        <Button variant='outline-primary'>
-          What's For Lunch?
-        </Button>
-        <RecipeList recipes={sortedAvailableRecipes} />
+      <Container style={{ padding: '5rem', textAlign: 'center' }}>
+        <Transition
+          items={this.state.showButton}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+        >
+          {show =>
+            show &&
+            (props => (
+              <animated.div style={props}>
+                <Button
+                  variant='outline-primary' onClick={this.handleClick}>
+                  What's For Lunch?
+                </Button>
+              </animated.div>
+            ))
+          }
+        </Transition>
+        <Transition
+          items={this.state.showRecommendedRecipes}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+        >
+          {show =>
+            show &&
+            (props => (
+              <animated.div style={props}>
+                <RecipeList recipes={sortedAvailableRecipes} />
+              </animated.div>
+            ))
+          }
+        </Transition>
       </Container>
     );
   }

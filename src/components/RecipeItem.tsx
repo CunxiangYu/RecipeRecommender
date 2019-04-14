@@ -11,7 +11,7 @@ interface RecipeItemProps {
 const RecipeItem: React.SFC<RecipeItemProps> = ({ recipe }) => {
   return (
     <div>
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem', margin: '2rem auto' }}>
         <Card.Header as='h5'>{recipe.title}</Card.Header>
         <ListGroup variant='flush'>
           {
